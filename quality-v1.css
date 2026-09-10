@@ -1,0 +1,137 @@
+/* SergeyVoyage UI quality pass: ui-design-checklist + Brandbook tokens */
+:root{
+  --sv-bg:#F6F3ED;
+  --sv-surface:#FFFFFF;
+  --sv-surface-soft:#FBF8F4;
+  --sv-text:#2B2B2B;
+  --sv-muted:#6F6A64;
+  --sv-olive:#6B7A5A;
+  --sv-orange:#FF6A1A;
+  --sv-orange-hover:#E95D0B;
+  --sv-line:#E8E1D8;
+  --sv-orange-soft:#FFF1E7;
+  --sv-olive-soft:#EEF3E9;
+  --sv-r-sm:14px;
+  --sv-r-md:18px;
+  --sv-r-lg:24px;
+  --sv-r-xl:30px;
+  --sv-shadow-card:0 12px 34px rgba(43,43,43,.065);
+  --sv-shadow-float:0 22px 58px rgba(43,43,43,.11);
+}
+
+html{scroll-padding-top:16px}
+body{background:var(--sv-bg);color:var(--sv-text)}
+.app{max-width:680px;padding-left:18px;padding-right:18px}
+
+/* Typography: calmer hierarchy, readable measure */
+.brand strong{font-size:24px;letter-spacing:-.045em}
+.brand small{margin-top:6px;letter-spacing:.11em;font-size:9px;color:#8A847D}
+.intro{padding:6px 2px 20px}
+.intro .eyebrow,.results .eyebrow{font-size:11px;letter-spacing:.12em}
+.intro h1{font-size:clamp(40px,11vw,56px);line-height:.98;letter-spacing:-.055em;max-width:11ch;margin:12px 0 14px}
+.intro p{font-size:17px;line-height:1.52;max-width:34ch;color:#5F5A54}
+.results-head h2{font-size:clamp(28px,8vw,36px);line-height:1.04;letter-spacing:-.04em;max-width:14ch}
+.results-description{margin:8px 0 0;color:var(--sv-muted);font-size:13px;line-height:1.45;max-width:36ch}
+.food-card h3{font-size:clamp(22px,6.4vw,27px);line-height:1.12;letter-spacing:-.028em;text-wrap:balance}
+.food-card p,.recipe-sub{color:var(--sv-muted)}
+
+/* Surfaces and spacing */
+.picker{background:var(--sv-surface);border:1px solid var(--sv-line);border-radius:var(--sv-r-xl);padding:8px;box-shadow:var(--sv-shadow-card);backdrop-filter:none}
+.selector{min-height:72px;background:transparent;border-color:var(--sv-line);padding:13px 10px;grid-template-columns:46px 1fr 22px;gap:12px}
+.selector:first-of-type{border-radius:22px 22px 0 0}
+.selector:last-of-type{border-radius:0 0 22px 22px}
+.selector:active{background:#FAF7F2}
+.selector-icon{width:44px;height:44px;border-radius:15px}
+.selector-icon svg,.chev svg,.primary svg,.card-cta svg,.reroll svg,.back-btn svg,.sheet-close svg{width:22px;height:22px;display:block}
+.selector-label{font-size:12px;line-height:1.25;color:var(--sv-muted);margin-bottom:4px}
+.selector-value{font-size:17px;line-height:1.25;letter-spacing:-.018em}
+.chev{display:grid;place-items:center;color:#8D8780}
+
+/* Action hierarchy: one clear orange CTA, no decorative gradient */
+.primary,.card-cta,.offer button{background:var(--sv-orange);box-shadow:none;transition:background-color .12s ease,transform .12s ease}
+.primary{min-height:54px;border-radius:17px;margin-top:10px;padding:15px 18px;font-size:15px}
+.primary svg,.card-cta svg,.offer button svg{width:19px;height:19px}
+.primary:active,.card-cta:active,.offer button:active{background:var(--sv-orange-hover);transform:translateY(1px);box-shadow:none}
+.trust-line{font-size:10px;color:#88827B;padding-top:13px;padding-bottom:3px}
+
+/* Results */
+.results{padding-top:42px}
+.results-head{align-items:flex-start;margin-bottom:18px}
+.edit-btn{font-size:12px;min-height:40px;color:var(--sv-orange);padding:6px 0;border-radius:10px}
+.food-grid{gap:20px}
+.food-card{border:1px solid var(--sv-line);border-radius:var(--sv-r-lg);box-shadow:var(--sv-shadow-card);background:var(--sv-surface)}
+.card-photo,.recipe-photo{background:#EFE9E1}
+.card-photo.has-photo img,.recipe-photo.has-photo img{width:100%;height:auto;object-fit:contain;background:#EFE9E1}
+.card-photo.placeholder{height:238px;background:linear-gradient(145deg,#F7F1E9,#E8DED2)}
+.card-photo.placeholder.fish{background:linear-gradient(145deg,#F2F7F5,#DCE8E4)}
+.card-photo.placeholder.veg{background:linear-gradient(145deg,#F4F7EE,#E0E8D2)}
+.card-photo.placeholder.meat{background:linear-gradient(145deg,#F7EFEA,#E7D6CC)}
+.photo-fallback{font-size:0;padding:26px;text-align:center}
+.photo-fallback::before{content:'Фото блюда';display:block;font-family:"Montserrat",sans-serif;font-size:18px;font-weight:800;color:#625D57;margin-bottom:7px}
+.photo-fallback::after{content:'готовим для финальной версии';display:block;font-size:11px;color:#8D8780}
+.food-card-body{padding:18px 18px 19px}
+.card-meta{gap:6px;margin-bottom:12px}
+.card-meta span{font-size:10px;line-height:1;padding:7px 9px;border:1px solid #EAE4DD;background:#F7F3EE;color:#5D5852}
+.card-meta span:first-child{background:var(--sv-orange-soft);border-color:#FFDCC5;color:#B94E12}
+.card-cta{min-height:50px;border-radius:15px;padding:13px 15px;font-size:14px}
+.reroll{min-height:50px;border:1px solid var(--sv-line);background:var(--sv-surface);border-radius:15px;padding:13px 15px;display:flex;align-items:center;justify-content:center;gap:8px;color:#4E4944;box-shadow:none}
+.reroll:active{background:#FAF7F2}
+
+/* Recipe readability */
+.recipe-page{max-width:680px}
+.recipe-photo{border-radius:var(--sv-r-lg);border:1px solid var(--sv-line);box-shadow:var(--sv-shadow-card)}
+.recipe-main{margin-top:20px}
+.recipe-main>h1{font-size:clamp(33px,9vw,44px);line-height:1.05;letter-spacing:-.045em;text-wrap:balance;margin-bottom:10px}
+.recipe-sub{font-size:15px;line-height:1.5;max-width:42ch;margin-bottom:18px}
+.recipe-section{border:1px solid var(--sv-line);border-radius:var(--sv-r-lg);padding:20px 18px;margin:14px 0;box-shadow:0 8px 24px rgba(43,43,43,.04)}
+.recipe-section h2{font-size:24px;line-height:1.15;margin-bottom:16px}
+.ingredient-group-title{font-size:10px;letter-spacing:.1em;margin-top:18px}
+.ingredient-list li{font-size:14px;line-height:1.45;padding:11px 0;border-color:#EEE8E1}
+.ingredient-list small{font-size:11px;line-height:1.35;margin-top:3px}
+.step{grid-template-columns:40px 1fr;gap:12px}
+.step>span{width:36px;height:36px;border-radius:12px;background:var(--sv-orange-soft);color:var(--sv-orange);font-family:"Montserrat",sans-serif;font-size:11px;letter-spacing:.03em}
+.step p{font-size:15px;line-height:1.55;margin-top:3px}
+.tip-box{background:var(--sv-olive-soft);border:1px solid #DDE6D4;border-radius:var(--sv-r-md);padding:17px}
+
+/* Commercial bridge: useful continuation, not a dark ad block */
+.offer{background:linear-gradient(180deg,#FFF5EE 0%,#FFF0E5 100%);color:var(--sv-text);border:1px solid #FFD9BF;border-radius:var(--sv-r-lg);padding:22px 19px;margin-top:16px;box-shadow:none}
+.offer-label{color:var(--sv-olive);font-size:9px;letter-spacing:.11em}
+.offer h2{font-size:29px;line-height:1.05;margin:8px 0 9px}
+.offer p{color:#655E57;font-size:14px;line-height:1.5;margin-bottom:16px}
+.offer button{min-height:50px;border-radius:15px;padding:13px 15px}
+
+/* Bottom sheet */
+.sheet-backdrop{background:rgba(43,43,43,.38);backdrop-filter:blur(2px)}
+.sheet{background:#FCFAF7;border-radius:28px 28px 0 0;padding:9px 18px calc(20px + env(safe-area-inset-bottom));box-shadow:0 -18px 50px rgba(43,43,43,.14)}
+.sheet-handle{margin-bottom:11px}
+.sheet-titlebar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:12px}
+.sheet-titlebar h2,.sheet h3{font-family:"Montserrat",sans-serif;font-size:23px;line-height:1.15;letter-spacing:-.025em;margin:0}
+.sheet-close{width:44px;height:44px;flex:0 0 44px;border:1px solid var(--sv-line);border-radius:14px;background:#fff;display:grid;place-items:center;color:#5E5953}
+.sheet-option{min-height:56px;border-radius:16px;border-color:var(--sv-line);padding:14px 15px;font-size:15px;line-height:1.35}
+.sheet-option.selected{background:var(--sv-orange-soft);border-color:#FFB98D;box-shadow:none}
+.sheet-option b{font-size:19px}
+
+/* States and accessibility */
+.state-card,.notice,.loading{max-width:520px;margin:54px auto;background:#fff;border:1px solid var(--sv-line);border-radius:var(--sv-r-lg);padding:22px 20px;text-align:center;box-shadow:var(--sv-shadow-card)}
+.state-card strong{display:block;font-family:"Montserrat",sans-serif;font-size:20px;line-height:1.2;margin-bottom:7px}
+.state-card p{font-size:13px;line-height:1.45;color:var(--sv-muted);margin:0 0 15px}
+.secondary-action{min-height:46px;border:1px solid var(--sv-line);background:#fff;border-radius:14px;padding:11px 16px;font-weight:800}
+button:focus-visible{outline:3px solid rgba(255,106,26,.28);outline-offset:2px}
+
+@media(max-width:390px){
+  .app{padding-left:14px;padding-right:14px}
+  .intro h1{font-size:40px}
+  .intro p{font-size:16px}
+  .results-head{gap:8px}
+  .food-card-body{padding:17px 16px 17px}
+  .recipe-section{padding:18px 16px}
+}
+
+@media(min-width:640px){
+  .food-grid{grid-template-columns:1fr 1fr}
+  .food-card:first-child{grid-column:auto}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
