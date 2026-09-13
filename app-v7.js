@@ -8,7 +8,13 @@ var SAT={any:'Неважно',hearty:'Посытнее',light:'Полегче'};
 var PHOTOS={
   C01:{url:'https://images.pexels.com/photos/37107097/pexels-photo-37107097.jpeg?auto=compress&cs=tinysrgb&w=1400',alt:'Курица в медово-чесночной глазури'},
   F05:{url:'https://images.pexels.com/photos/8697543/pexels-photo-8697543.jpeg?auto=compress&cs=tinysrgb&w=1400',alt:'Креветки в чесночно-лимонном масле'},
-  V09:{url:'https://images.pexels.com/photos/19217442/pexels-photo-19217442.jpeg?auto=compress&cs=tinysrgb&w=1400',alt:'Томатно-сырная паста'}
+  V09:{url:'https://images.pexels.com/photos/19217442/pexels-photo-19217442.jpeg?auto=compress&cs=tinysrgb&w=1400',alt:'Томатно-сырная паста'},
+  C03:{url:'images/c03.avif',alt:'Сливочная паста с курицей и вялеными томатами'},
+  M08:{url:'images/m08.avif',alt:'Фрикадельки в томатном соусе'},
+  F01:{url:'images/f01.avif',alt:'Треска в лимонно-чесночном соусе'},
+  F03:{url:'images/f03.avif',alt:'Терияки-боул с лососем и авокадо'},
+  V06:{url:'images/v06.avif',alt:'Сливочная паста с запечёнными томатами'},
+  V08:{url:'images/v08.avif',alt:'Шакшука с яйцами и хрустящим хлебом'}
 };
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 function track(name,props){try{var a=JSON.parse(localStorage.getItem('sv_mvp_events')||'[]');a.push({event:name,ts:new Date().toISOString(),props:props||{}});localStorage.setItem('sv_mvp_events',JSON.stringify(a.slice(-150)));}catch(e){}}
